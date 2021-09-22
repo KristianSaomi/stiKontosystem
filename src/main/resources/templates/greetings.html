@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kontosystem - The best kontosystem </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{static/css/greater.css}" href="static/css/greater.css">
+    <!-- Pågrund av Thymeleaf <link rel="stylesheet" type="text/css" media="all" href="/css/index.css" th:href="@{/css/index.css}" />-->
+</head>
+<body>
+<div class="ParentDiv">
+    <div class ="childDiv">
+        <h1 class="maintTitle">Kontosystem V.3.3.4</h1>
+        <p th:text="'Hello, ' + ${name} + '!'" />
+    </div>
+</div>
+</body>
+</html>
