@@ -19,6 +19,7 @@ body {
     box-shadow: 1px 1px 20px 5px white;;
     border-radius: 10px;
     padding: 15px;
+    margin: 10px;
     width: auto;
     height: auto;
 }
@@ -28,5 +29,39 @@ body {
     text-underline-offset: 2px;
 
 }
+.userListTitle {
+    font-weight: 400;
+}
+
+.userDiv {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+.userDiv table {
+    text-align: left;
+    color: black;
+}
+table td {
+    padding: 10px;
+    text-decoration: underline black 1px;
+}
+.DivFooter {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.DivFooterChild {
+    background-color: #a68c52;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
 
 

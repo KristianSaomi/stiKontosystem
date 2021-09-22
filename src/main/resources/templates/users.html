@@ -3,20 +3,55 @@
 <head>
     <title>Kontosystem - The best kontosystem </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" th:href="@{static/css/user.css}" href="static/css/user.css">
+    <!-- <link rel="stylesheet" th:href="@{/static/users.css}" href="/static/users.css"> >-->
+    <link th:href="@{/styles/cssandjs/user.css}" rel="stylesheet" />
     <!-- Pågrund av Thymeleaf <link rel="stylesheet" type="text/css" media="all" href="/css/index.css" th:href="@{/css/index.css}" />-->
 </head>
 <body>
 <div class="ParentDiv">
     <div class ="childDiv">
         <h1 class="maintTitle">Kontosystem V.3.3.4</h1>
-    </div>
-    <ul>
-        <li th:each ="users :${users}">
-            <span th:text="${users.getId()}">Default</span>
+        <h3 class="userListTitle"> Här är alla våra users</h3>
 
-        </li>
-    </ul>
-</div>
-</body>
-</html>
+        <div class = "userDiv">
+
+            <!-- <ul>
+                 <li  th:each ="users :${users}">
+                     <span th:text="${users}">Default</span>
+
+                   </li>
+               </ul> -->
+
+             <table>
+                 <tr>
+                     <th>Id</th>
+                     <th>Name</th>
+                     <th>Age</th>
+                     <th>Mail</th>
+                     <th>Password</th>
+                 </tr>
+                 <tr th:each="users : ${users}">
+                     <td th:text="${users.getId()}"></td>
+                     <td th:text="${users.getName()}"></td>
+                     <td th:text="${users.getAge}"></td>
+                     <td th:text="${users.getMail()}"></td>
+                     <td th:text="${users.getPassword()}"></td>
+
+                 </tr>
+                 <table>
+
+           </div>
+
+         <div class = "DivFooter">
+             <div class ="DivFooterChild">
+                 <h1>Skapad av Grupp 1 </h1>
+                 <h4> Ali, Suayb, Kevin, Kristian</h4>
+             </div>
+         </div>
+
+       </div>
+
+
+   </div>
+   </body>
+   </html>

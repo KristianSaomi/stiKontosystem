@@ -25,11 +25,9 @@ public class UserController {
         List <User> users = service.getUsers();
 
         model.addAttribute("users", users);
-        System.out.println(users.get(1));
         return "users";
 
     }
-    @Controller
 
     public class GreetingController {
         @GetMapping("/greeting")
