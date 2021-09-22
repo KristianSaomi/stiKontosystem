@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+body {
+    font-family: "Jost";
+    letter-spacing: 1.2px;
+    background-color: #002A2A;
+    color: white;
+
+}
+.ParentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+.childDiv {
+    background-color: #a68c52;
+    box-shadow: 1px 1px 20px 5px white;;
+    border-radius: 10px;
+    padding: 15px;
+    width: auto;
+    height: auto;
+}
+.maintTitle {
+    font-size: 40px;
+    text-decoration: 3px underline white;
+    text-underline-offset: 2px;
+
+}
+
+
