@@ -55,7 +55,12 @@
             <artifactId>spring-data-jpa</artifactId>
             <version>2.5.4</version>
         </dependency>
-    </dependencies>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

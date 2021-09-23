@@ -3,9 +3,11 @@ package com.kontosystem.StiProjekt.userController;
 
 import com.kontosystem.StiProjekt.userEntity.User;
 import com.kontosystem.StiProjekt.userService.UserService;
+import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+
 
 import java.util.List;
 
@@ -16,7 +18,9 @@ public class RestController {
     @Autowired
     private UserService service; //Deklarerar(implementerar) att Controller använder UserService
 
-    @PostMapping("/addUser")
+    //Nu körs XML som standard, gå in på headers + lägg "Accept = Key  / application/json = Value", så ändras allt till Json.
+    @PostMapping(path = "/{postUser}", consumes ={org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE},
+    produces = {org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE})
     public User addProduct(@RequestBody User user) {
         return service.saveUser(user);
     }
