@@ -18,6 +18,8 @@ public class RestController {
     @Autowired
     private UserService service; //Deklarerar(implementerar) att Controller använder UserService
 
+    //Import av Mediatype
+    //Vi la in ett till dependency
     //Nu körs XML som standard, gå in på headers + lägg "Accept = Key  / application/json = Value", så ändras allt till Json.
     @PostMapping(path = "/{postUser}", consumes ={org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE},
     produces = {org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE})
