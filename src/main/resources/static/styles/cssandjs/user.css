@@ -74,11 +74,6 @@ table tr {
     transform: scale(1.5);
     border: 1px solid white;
     z-index: 9999;
-    content: "The best group";
-}
-.DivFooterChild:hover + body {
-    background-color: black !important;
-    color: blue !important;
 }
 
 
