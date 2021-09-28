@@ -76,6 +76,78 @@ table tr {
     z-index: 9999;
 }
 
+.imageKristian {
+    width: 130px;
+    height: 130px;
+    box-shadow: 1px 1px 20px 5px white;
+    position: absolute;
+    border: 1px solid black;
+    left: 100px;
+    border-radius: 200px;
+    object-fit: cover;
+    animation: MoveUpDown 4s linear infinite;
+    transition: 1s ease;
+
+}
+
+.imageAli {
+    width: 160px;
+    height: 160px;
+    box-shadow: 1px 1px 20px 5px white;
+    position: absolute;
+    border: 1px solid black;
+    left: 100px;
+    top: 100px;
+    border-radius: 200px;
+    object-fit: cover;
+    animation: MoveUpDown 5s linear infinite;
+    transition: 1s ease;
+
+}
+
+.imageKevin {
+    width: 145px;
+    height: 145px;
+    box-shadow: 1px 1px 20px 5px white;
+    position: absolute;
+    border: 1px solid black;
+    right: 100px;
+    border-radius: 200px;
+    object-fit: cover;
+    animation: MoveUpDown 3s linear infinite;
+    transition: 1s ease;
+
+}
+.imageSuayb {
+    width: 135px;
+    height: 135px;
+    box-shadow: 1px 1px 20px 5px white;
+    position: absolute;
+    border: 1px solid black;
+    right: 100px;
+    top: 100px;
+    border-radius: 200px;
+    object-fit: cover;
+    animation: MoveUpDown 6s linear infinite;
+    transition: 1s ease;
+
+}
+
+.imageSuayb:hover , .imageKristian:hover  , .imageKevin:hover , .imageAli:hover {
+    width: 200px;
+    height: 200px;
+    box-shadow: 1px 1px 20px 5px #a68c52;
+    z-index: 9999;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+}
 
 
 

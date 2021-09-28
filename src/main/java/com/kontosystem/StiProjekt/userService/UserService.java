@@ -5,6 +5,8 @@ import com.kontosystem.StiProjekt.repository.UserRepository;
 import com.kontosystem.StiProjekt.userEntity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -16,6 +18,7 @@ public class UserService {
     private UserRepository repository; // Deklerar repositoryn här i service klass
 
     public User saveUser(User user) {
+
         return repository.save(user);
     }
 
@@ -27,7 +30,12 @@ public class UserService {
         return repository.findAll();
     }
 
+
+
     public User getUserById(long id) {
+        if (repository.findById(id).isEmpty()) {
+            throw new IllegalStateException("Sorry");
+        }else
         return repository.findById(id).orElse(null);
     }
 

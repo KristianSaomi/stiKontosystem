@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-
-
 import java.util.List;
 
+@ControllerAdvice
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/v1")
 public class RestController {
@@ -21,8 +20,8 @@ public class RestController {
     //Import av Mediatype
     //Vi la in ett till dependency
     //Nu körs XML som standard, gå in på headers + lägg "Accept = Key  / application/json = Value", så ändras allt till Json.
-    @PostMapping(path = "/{postUser}", consumes ={org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE},
-    produces = {org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(path = "/{postUser}", consumes = {org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE},
+            produces = {org.springframework.http.MediaType.APPLICATION_XML_VALUE, org.springframework.http.MediaType.APPLICATION_JSON_VALUE})
     public User addProduct(@RequestBody User user) {
         return service.saveUser(user);
     }
@@ -32,17 +31,19 @@ public class RestController {
         return service.saveUsers(users);
     }
 
-    @GetMapping(path ="/{users}", produces = {MediaType.APPLICATION_XML_VALUE,
-    MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path = "/{users}", produces = {MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_JSON_VALUE})
     public List<User> findAllUsers() {
-        return service.getUsers();
+            return service.getUsers();
     }
+
 
     @GetMapping(value="/userById/{id}", produces = {MediaType.APPLICATION_XML_VALUE,
             MediaType.APPLICATION_JSON_VALUE}) // Pathvariable, här kan man använda @RequestParam oxå om det önskas
     public User findProductById(@PathVariable long id) {
         return service.getUserById(id);
-    }
+        }
+
     //Funkar men använd på Unika namn
     @GetMapping(value="/user/{name}", produces = {MediaType.APPLICATION_XML_VALUE,
             MediaType.APPLICATION_JSON_VALUE}) // denna metod finns inte i JPA repo, skrev in själv. Ta en titt REPO Interface ser du det!!!
